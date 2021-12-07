@@ -1,0 +1,33 @@
+.bookmark-logo {
+  --circle: #5267df;
+  --text: #242a45;
+  --icon-in-circle: #fff;
+
+  --delay: 300ms;
+
+  .circle,
+  .text,
+  .icon-in-circle {
+    transition: fill 300ms ease-in-out;
+  }
+  .circle {
+    fill: var(--circle);
+    transition-delay: calc(var(--delay) / 3);
+  }
+  .text {
+    fill: var(--text);
+    transition-delay: calc(var(--delay) / 2);
+  }
+  .icon-in-circle {
+    fill: var(--icon-in-circle);
+    transition-delay: calc(var(--delay) / 0.5);
+  }
+}
+
+nav.is-active {
+  .bookmark-logo {
+    --circle: #fff;
+    --text: #fff;
+    --icon-in-circle: #101010;
+  }
+}

@@ -1,0 +1,56 @@
+@use "./utilities";
+@use "./mixins" as *;
+@import "./logo";
+@import "./hamburger";
+@import "./nav-link-contaienr";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+li {
+  list-style: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  font-size: 18px;
+  font-family: "Rubik", sans-serif;
+  @include media-breakpoing-up {
+    font-size: 16px;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+
+  a {
+    width: fit-content;
+  }
+
+  .bookmark-logo,
+  .hamburger {
+    position: relative;
+    z-index: 9;
+  }
+
+  .hamburger {
+    justify-self: end;
+  }
+}
