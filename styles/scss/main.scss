@@ -22,10 +22,10 @@ a {
 }
 
 :root {
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Rubik", sans-serif;
   @include media-breakpoing-up {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -34,23 +34,15 @@ body {
 }
 
 nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
-
-  a {
-    width: fit-content;
-  }
+  gap: 1rem;
 
   .bookmark-logo,
   .hamburger {
     position: relative;
     z-index: 9;
-  }
-
-  .hamburger {
-    justify-self: end;
   }
 }

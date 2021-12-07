@@ -1,3 +1,11 @@
+@use "./mixins" as *;
+
+@include media-breakpoing-up {
+  nav .hamburger {
+    display: none;
+  }
+}
+
 .hamburger {
   cursor: pointer;
   display: inline-block;

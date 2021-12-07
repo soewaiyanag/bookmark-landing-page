@@ -24,10 +24,12 @@
   }
 }
 
-nav.is-active {
-  .bookmark-logo {
-    --circle: #fff;
-    --text: #fff;
-    --icon-in-circle: #101010;
+@include media-breakpoing-down {
+  nav.is-active {
+    .bookmark-logo {
+      --circle: #fff;
+      --text: #fff;
+      --icon-in-circle: #101010;
+    }
   }
 }

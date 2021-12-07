@@ -1,4 +1,9 @@
 @mixin media-breakpoing-up($bp: 576px) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+@mixin media-breakpoing-down($bp: 576px) {
   @media (max-width: $bp) {
     @content;
   }
