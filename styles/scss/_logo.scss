@@ -12,15 +12,12 @@
   }
   .circle {
     fill: var(--circle);
-    transition-delay: calc(var(--delay) / 3);
   }
   .text {
     fill: var(--text);
-    transition-delay: calc(var(--delay) / 2);
   }
   .icon-in-circle {
     fill: var(--icon-in-circle);
-    transition-delay: calc(var(--delay) / 0.5);
   }
 }
 

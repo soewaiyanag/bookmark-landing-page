@@ -13,3 +13,20 @@
     max-width: 1170px;
   }
 }
+.btn {
+  padding: 1rem;
+  border-radius: 5px;
+  outline-offset: -2px;
+  font-weight: 500;
+  transition: color 300ms ease, outline 300ms ease, background-color 300ms ease;
+}
+
+.blue-btn {
+  background-color: hsl(231, 69%, 60%);
+  color: white;
+  &:hover {
+    background-color: transparent;
+    outline: 2px solid hsl(231, 69%, 60%);
+    color: hsl(231, 69%, 60%);
+  }
+}

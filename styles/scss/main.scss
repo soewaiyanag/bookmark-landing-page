@@ -1,8 +1,8 @@
 @use "./utilities";
 @use "./mixins" as *;
 @import "./logo";
-@import "./hamburger";
-@import "./nav-link-contaienr";
+@import "./nav";
+@import "./intro-section";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 li {
   list-style: none;
@@ -31,18 +31,4 @@ a {
 
 body {
   overflow-x: hidden;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-  gap: 1rem;
-
-  .bookmark-logo,
-  .hamburger {
-    position: relative;
-    z-index: 9;
-  }
 }

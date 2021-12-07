@@ -21,6 +21,24 @@
   }
 }
 
+.btn {
+  padding: 1rem;
+  border-radius: 5px;
+  outline-offset: -2px;
+  font-weight: 500;
+  transition: color 300ms ease, outline 300ms ease, background-color 300ms ease;
+}
+
+.blue-btn {
+  background-color: #5368df;
+  color: white;
+}
+.blue-btn:hover {
+  background-color: transparent;
+  outline: 2px solid #5368df;
+  color: #5368df;
+}
+
 .bookmark-logo {
   --circle: #5267df;
   --text: #242a45;
@@ -34,15 +52,12 @@
 }
 .bookmark-logo .circle {
   fill: var(--circle);
-  transition-delay: calc(var(--delay) / 3);
 }
 .bookmark-logo .text {
   fill: var(--text);
-  transition-delay: calc(var(--delay) / 2);
 }
 .bookmark-logo .icon-in-circle {
   fill: var(--icon-in-circle);
-  transition-delay: calc(var(--delay) / 0.5);
 }
 
 @media (max-width: 576px) {
@@ -52,23 +67,17 @@
     --icon-in-circle: #101010;
   }
 }
-@media (min-width: 576px) {
-  nav .hamburger {
-    display: none;
-  }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
 }
-.hamburger {
-  cursor: pointer;
-  display: inline-block;
-}
-.hamburger .bar {
-  display: block;
-  width: 24px;
-  height: 4px;
-  margin: 4px auto;
-  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out, background-color 300ms ease-in-out;
-  background-color: #101010;
-  border-radius: 3px;
+nav .bookmark-logo,
+nav .hamburger {
+  position: relative;
+  z-index: 9;
 }
 
 nav.is-active .hamburger .bar {
@@ -84,21 +93,51 @@ nav.is-active .hamburger .bar:nth-child(3) {
   transform: translateY(-7.8px) rotate(-45deg);
 }
 
+.hamburger {
+  cursor: pointer;
+  display: inline-block;
+}
+.hamburger .bar {
+  display: block;
+  width: 24px;
+  height: 4px;
+  margin: 4px auto;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out, background-color 300ms ease-in-out;
+  background-color: #101010;
+  border-radius: 3px;
+}
+
 .nav-link-container {
   display: flex;
   gap: 1.2rem;
+  z-index: 8;
 }
-.nav-link-container a {
+.nav-link-container .nav-link a {
   color: #252b46;
-  font-weight: 400;
+  font-weight: 500;
+  transition: color 300ms ease-in-out;
 }
-.nav-link-container .login-btn {
+.nav-link-container .nav-link a:hover {
+  color: #fa5757;
+}
+.nav-link-container .nav-link .login-btn {
   color: white;
   background-color: #fa5757;
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  transition: background-color 300ms ease-in-out, outline 300ms ease-in-out;
+}
+.nav-link-container .nav-link .login-btn:hover {
+  background-color: transparent;
+  outline-offset: -2px;
+  outline: 2px solid #fa5757;
 }
 
+@media (min-width: 576px) {
+  nav .hamburger {
+    display: none;
+  }
+}
 @media (max-width: 576px) {
   .nav-link-container {
     gap: 0;
@@ -133,7 +172,8 @@ nav.is-active .hamburger .bar:nth-child(3) {
   .nav-link-container .nav-link .login-btn {
     padding: 0.5rem;
     margin-top: 1.5rem;
-    border: 3px solid #fff;
+    outline-offset: -2px;
+    outline: 2px solid #fff;
     background-color: transparent;
     border-radius: 5px;
   }
@@ -143,6 +183,59 @@ nav.is-active .hamburger .bar:nth-child(3) {
     transition: transform 300ms ease-in-out;
   }
 }
+.intro {
+  margin-top: 5rem;
+}
+.intro picture {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.intro picture .hero-img {
+  width: 100%;
+}
+.intro picture .blue-background {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  width: 100%;
+  aspect-ratio: 2/1.1;
+  background-color: #5368df;
+  border-top-left-radius: 250px;
+  border-bottom-left-radius: 250px;
+  z-index: -1;
+}
+.intro aside {
+  text-align: center;
+  margin-top: 4rem;
+}
+.intro aside .text-box > * {
+  margin: 1rem 0;
+}
+.intro aside .text-box h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #252b46;
+}
+.intro aside .text-box p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #9194a1;
+}
+.intro aside .btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.intro aside .btns .firefox-btn {
+  color: #252b46;
+  background-color: #eee;
+}
+.intro aside .btns .firefox-btn:hover {
+  background-color: transparent;
+  outline: #252b46 2px solid;
+}
+
 li {
   list-style: none;
 }
@@ -172,19 +265,6 @@ a {
 
 body {
   overflow-x: hidden;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-  gap: 1rem;
-}
-nav .bookmark-logo,
-nav .hamburger {
-  position: relative;
-  z-index: 9;
 }
 
 /*# sourceMappingURL=style.css.map */

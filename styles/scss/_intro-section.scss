@@ -1,0 +1,55 @@
+.intro {
+  margin-top: 5rem;
+  picture {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    .hero-img {
+      width: 100%;
+    }
+    .blue-background {
+      position: absolute;
+      top: 25%;
+      left: 20%;
+      width: 100%;
+      aspect-ratio: 2/1.1;
+      background-color: hsl(231, 69%, 60%);
+      border-top-left-radius: 250px;
+      border-bottom-left-radius: 250px;
+      z-index: -1;
+    }
+  }
+  aside {
+    text-align: center;
+    margin-top: 4rem;
+    .text-box {
+      & > * {
+        margin: 1rem 0;
+      }
+      h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        color: hsl(229, 31%, 21%);
+      }
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+        color: hsl(229, 8%, 60%);
+      }
+    }
+    .btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+
+      .firefox-btn {
+        color: hsl(229, 31%, 21%);
+        background-color: #eee;
+        &:hover {
+          background-color: transparent;
+          outline: hsl(229, 31%, 21%) 2px solid;
+        }
+      }
+    }
+  }
+}

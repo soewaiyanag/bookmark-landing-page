@@ -1,0 +1,144 @@
+@use "./mixins" as *;
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+
+  .bookmark-logo,
+  .hamburger {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+nav.is-active {
+  .hamburger {
+    $tran: 7.8px;
+    $rot: 45deg;
+
+    .bar {
+      background-color: #fff;
+    }
+
+    .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .bar:nth-child(1) {
+      transform: translateY($tran) rotate($rot);
+    }
+    .bar:nth-child(3) {
+      transform: translateY(-$tran) rotate(-$rot);
+    }
+  }
+}
+
+.hamburger {
+  cursor: pointer;
+  display: inline-block;
+  .bar {
+    display: block;
+    width: 24px;
+    height: 4px;
+    margin: 4px auto;
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out,
+      background-color 300ms ease-in-out;
+    background-color: #101010;
+    border-radius: 3px;
+  }
+}
+
+.nav-link-container {
+  display: flex;
+  gap: 1.2rem;
+  z-index: 8;
+
+  .nav-link {
+    a {
+      color: hsl(229, 31%, 21%);
+      font-weight: 500;
+      transition: color 300ms ease-in-out;
+      &:hover {
+        color: hsl(0, 94%, 66%);
+      }
+    }
+    .login-btn {
+      color: white;
+      background-color: hsl(0, 94%, 66%);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 300ms ease-in-out, outline 300ms ease-in-out;
+
+      &:hover {
+        background-color: transparent;
+        outline-offset: -2px;
+        outline: 2px solid hsl(0, 94%, 66%);
+      }
+    }
+  }
+}
+
+@include media-breakpoing-up {
+  nav .hamburger {
+    display: none;
+  }
+}
+
+@include media-breakpoing-down {
+  .nav-link-container {
+    gap: 0;
+
+    transition: transform 300ms ease-in-out;
+    transform: translateX(100%);
+
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(37, 43, 70, 0.9);
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5rem;
+    text-align: center;
+
+    .nav-link {
+      width: 90%;
+      padding: 1rem 0;
+      a {
+        color: white;
+        font-weight: 300;
+
+        // to take the whole width of parent div
+        display: inline-block;
+        width: 100%;
+      }
+      &:first-child {
+        border-top: 0.5px solid hsl(229, 8%, 60%);
+        border-bottom: 0.5px solid hsl(229, 8%, 60%);
+      }
+      &:not(:first-child):not(:last-child) {
+        border-bottom: 0.5px solid hsl(229, 8%, 60%);
+      }
+
+      .login-btn {
+        padding: 0.5rem;
+        margin-top: 1.5rem;
+        outline-offset: -2px;
+        outline: 2px solid #fff;
+        background-color: transparent;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  nav.is-active {
+    .nav-link-container {
+      transform: translateX(0);
+      transition: transform 300ms ease-in-out;
+    }
+  }
+}
