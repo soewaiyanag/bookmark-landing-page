@@ -1,28 +1,18 @@
 .intro {
   margin-top: 5rem;
-  picture {
-    position: relative;
-    display: flex;
-    justify-content: center;
+  text-align: center;
+
+  position: relative;
+  .hero-img-container {
+    margin-left: auto;
+    margin-right: auto;
     .hero-img {
       width: 100%;
+      max-width: 400px;
       transform: scale(1.15);
-    }
-    .blue-background {
-      position: absolute;
-      top: 25%;
-      left: 20%;
-      width: 100%;
-      aspect-ratio: 2/1.1;
-      background-color: hsl(231, 69%, 60%);
-      border-top-left-radius: 250px;
-      border-bottom-left-radius: 250px;
-      z-index: -1;
     }
   }
   aside {
-    text-align: center;
-    margin-top: 4rem;
     .text-box {
       & > * {
         margin: 1rem 0;
@@ -55,22 +45,26 @@
   }
 }
 
-@include media-breakpoing-up($md) {
+@include media-breakpoing-up($lg) {
   .intro {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 400px;
-    picture {
+    display: flex;
+    gap: 2rem;
+
+    .hero-img-container,
+    aside {
+      width: 50%;
+    }
+
+    .hero-img-container {
       .hero-img {
-        max-width: 600px;
-        transform: translate(10%);
-      }
-      .blue-background {
-        height: 260px;
-        left: 40%;
+        flex-shrink: 0;
+        max-width: 500px;
+        transform: translateY(10%);
       }
     }
+
     aside {
+      align-self: center;
       order: -1;
       text-align: left;
       .btns {
