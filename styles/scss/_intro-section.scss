@@ -1,33 +1,53 @@
 .intro {
   margin-top: 5rem;
   text-align: center;
-
   position: relative;
+
   .hero-img-container {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20%;
+      bottom: -10%;
+      left: 25%;
+      width: 1000px;
+      border-bottom-left-radius: 300px;
+      border-top-left-radius: 300px;
+      background-color: hsl(231, 69%, 60%);
+      z-index: -1;
+    }
+
     .hero-img {
       width: 100%;
       max-width: 400px;
       transform: scale(1.15);
     }
   }
+
   aside {
+    margin-top: 6rem;
     .text-box {
       & > * {
         margin: 1rem 0;
       }
+
       h1 {
         font-size: 2rem;
         font-weight: 500;
         color: hsl(229, 31%, 21%);
       }
+
       p {
         font-size: 1rem;
         font-weight: 400;
         color: hsl(229, 8%, 60%);
       }
     }
+
     .btns {
       display: flex;
       gap: 1rem;
@@ -36,6 +56,7 @@
       .firefox-btn {
         color: hsl(229, 31%, 21%);
         background-color: #eee;
+
         &:hover {
           background-color: transparent;
           outline: hsl(229, 31%, 21%) 2px solid;
@@ -56,14 +77,19 @@
     }
 
     .hero-img-container {
+      &::before {
+        top: 35%;
+      }
+
       .hero-img {
-        flex-shrink: 0;
         max-width: 500px;
         transform: translateY(10%);
       }
     }
 
     aside {
+      margin-top: 0;
+
       align-self: center;
       order: -1;
       text-align: left;

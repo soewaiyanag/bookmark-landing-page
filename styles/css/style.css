@@ -56,7 +56,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   gap: 1rem;
 }
 nav .bookmark-logo,
@@ -174,13 +174,29 @@ nav.is-active .hamburger .bar:nth-child(3) {
   position: relative;
 }
 .intro .hero-img-container {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
+}
+.intro .hero-img-container::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  bottom: -10%;
+  left: 25%;
+  width: 1000px;
+  border-bottom-left-radius: 300px;
+  border-top-left-radius: 300px;
+  background-color: #5368df;
+  z-index: -1;
 }
 .intro .hero-img-container .hero-img {
   width: 100%;
   max-width: 400px;
   transform: scale(1.15);
+}
+.intro aside {
+  margin-top: 6rem;
 }
 .intro aside .text-box > * {
   margin: 1rem 0;
@@ -218,12 +234,15 @@ nav.is-active .hamburger .bar:nth-child(3) {
 .intro aside {
     width: 50%;
   }
+  .intro .hero-img-container::before {
+    top: 35%;
+  }
   .intro .hero-img-container .hero-img {
-    flex-shrink: 0;
     max-width: 500px;
     transform: translateY(10%);
   }
   .intro aside {
+    margin-top: 0;
     align-self: center;
     order: -1;
     text-align: left;
