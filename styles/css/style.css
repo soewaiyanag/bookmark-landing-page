@@ -2,7 +2,14 @@
 .container {
   margin-right: auto;
   margin-left: auto;
-  max-width: 80%;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 90%;
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 980px;
+  }
 }
 
 .btn {
@@ -183,8 +190,8 @@ nav.is-active .hamburger .bar:nth-child(3) {
   position: absolute;
   top: 20%;
   bottom: -10%;
-  left: 25%;
-  width: 1000px;
+  left: 27%;
+  width: 2000px;
   border-bottom-left-radius: 300px;
   border-top-left-radius: 300px;
   background-color: #5368df;
@@ -193,7 +200,7 @@ nav.is-active .hamburger .bar:nth-child(3) {
 .intro .hero-img-container .hero-img {
   width: 100%;
   max-width: 400px;
-  transform: scale(1.15);
+  transform: scale(1.175);
 }
 .intro aside {
   margin-top: 6rem;
@@ -239,7 +246,7 @@ nav.is-active .hamburger .bar:nth-child(3) {
   }
   .intro .hero-img-container .hero-img {
     max-width: 500px;
-    transform: translateY(10%);
+    transform: translate(8%, 10%);
   }
   .intro aside {
     margin-top: 0;

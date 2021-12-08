@@ -1,7 +1,14 @@
+@use "./mixins" as *;
+
 .container {
   margin-right: auto;
   margin-left: auto;
-  max-width: 80%;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 90%;
+  @include media-breakpoing-up($lg) {
+    max-width: 980px;
+  }
 }
 .btn {
   padding: 1rem;
