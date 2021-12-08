@@ -6,6 +6,7 @@
     justify-content: center;
     .hero-img {
       width: 100%;
+      transform: scale(1.15);
     }
     .blue-background {
       position: absolute;
@@ -49,6 +50,31 @@
           background-color: transparent;
           outline: hsl(229, 31%, 21%) 2px solid;
         }
+      }
+    }
+  }
+}
+
+@include media-breakpoing-up($md) {
+  .intro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 400px;
+    picture {
+      .hero-img {
+        max-width: 600px;
+        transform: translate(10%);
+      }
+      .blue-background {
+        height: 260px;
+        left: 40%;
+      }
+    }
+    aside {
+      order: -1;
+      text-align: left;
+      .btns {
+        justify-content: left;
       }
     }
   }

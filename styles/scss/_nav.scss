@@ -80,13 +80,13 @@ nav.is-active {
   }
 }
 
-@include media-breakpoing-up {
+@include media-breakpoing-up($md) {
   nav .hamburger {
     display: none;
   }
 }
 
-@include media-breakpoing-down {
+@include media-breakpoing-down($md) {
   .nav-link-container {
     gap: 0;
 
