@@ -52,7 +52,7 @@
   fill: var(--icon-in-circle);
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   nav.is-active .bookmark-logo {
     --circle: #fff;
     --text: #fff;
@@ -187,6 +187,7 @@ nav.is-active .hamburger .bar:nth-child(3) {
 }
 .intro .hero-img-container::before {
   content: "";
+  animation-delay: 1000ms;
   position: absolute;
   top: 20%;
   bottom: -10%;
@@ -279,7 +280,7 @@ a {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
 }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   :root {
     font-size: 18px;
   }

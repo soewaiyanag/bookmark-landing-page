@@ -5,12 +5,12 @@ $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
 
-@mixin media-breakpoing-up($bp: $sm) {
+@mixin media-breakpoing-up($bp: $md) {
   @media (min-width: $bp) {
     @content;
   }
 }
-@mixin media-breakpoing-down($bp: $sm) {
+@mixin media-breakpoing-down($bp: $md) {
   @media (max-width: $bp) {
     @content;
   }
