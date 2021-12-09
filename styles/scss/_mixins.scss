@@ -18,11 +18,17 @@ $xxl: 1400px;
 
 @mixin fadeRight {
   opacity: 0;
-  transform: translateX(100px) !important;
+  transform: translateX(100px);
   transition: transform 1s, opacity 1s;
 }
 
-@mixin fadeRightReturnOrigin {
+@mixin fadeLeft {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: transform 1s, opacity 1s;
+}
+
+@mixin returnOrigin {
   opacity: 1 !important;
   transform: translateX(0px) !important;
 }

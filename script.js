@@ -10,12 +10,14 @@
 
 // SCROLL ANIMATION
 (function () {
-  const animateDiv = document.querySelector(".animate");
+  const animateDivs = document.querySelectorAll(".animate");
   const callback = (entries, observer) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+      if (
+        entry.isIntersecting &&
+        !entry.target.classList.contains("animated")
+      ) {
         entry.target.classList.add("animated");
-        observer.disconnect();
       }
     });
   };
@@ -23,8 +25,9 @@
   const myObserver = new IntersectionObserver(callback, {
     threshold: 0.5,
   });
-
-  myObserver.observe(animateDiv);
+  animateDivs.forEach((animateDiv) => {
+    myObserver.observe(animateDiv);
+  });
 })();
 
 // FEATURE SELECTOR

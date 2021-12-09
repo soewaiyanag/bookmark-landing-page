@@ -58,12 +58,52 @@
         background-color: hsl(0, 94%, 66%);
       }
     }
+
     [data-checked="true"] {
       color: black;
-
       &::after {
         width: 50%;
       }
+    }
+  }
+}
+
+.feature-dis {
+  margin-top: 2.5rem;
+  .illustration-container {
+    .illustration {
+      width: Min(90%, 350px);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 25%;
+      bottom: -20%;
+      right: 27%;
+      width: 2000px;
+      border-bottom-right-radius: 300px;
+      border-top-right-radius: 300px;
+      background-color: hsl(231, 69%, 60%);
+      z-index: -1;
+
+      @include fadeLeft;
+      transition-delay: 500ms;
+    }
+  }
+  .text-box {
+    margin-top: 5rem;
+  }
+}
+
+@include media-breakpoing-up($md) {
+  .feature-dis {
+    display: flex;
+    gap: 2rem;
+    & > * {
+      width: 50%;
+    }
+    .text-box {
+      margin-top: 0rem;
     }
   }
 }

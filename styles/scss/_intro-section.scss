@@ -1,15 +1,23 @@
+.illustration-container {
+  position: relative;
+  display: flex;
+
+  .illustration {
+    width: Min(100%, 400px);
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .intro {
   margin-top: 5rem;
   text-align: center;
   position: relative;
 
-  .hero-img-container {
-    position: relative;
-    display: flex;
-
+  .illustration-container {
     &::after {
       content: "";
-      animation-delay: 1000ms;
       position: absolute;
       top: 20%;
       bottom: 0%;
@@ -19,13 +27,9 @@
       border-top-left-radius: 300px;
       background-color: hsl(231, 69%, 60%);
       z-index: -1;
-    }
 
-    .hero-img {
-      width: Min(100%, 400px);
-
-      margin-left: auto;
-      margin-right: auto;
+      @include fadeRight;
+      transition-delay: 500ms;
     }
   }
 
@@ -72,17 +76,17 @@
     display: flex;
     gap: 2rem;
 
-    .hero-img-container,
+    .illustration-container,
     aside {
       width: 50%;
     }
 
-    .hero-img-container {
+    .illustration-container {
       &::before {
         top: 35%;
       }
 
-      .hero-img {
+      .illustration {
         max-width: 500px;
       }
     }
