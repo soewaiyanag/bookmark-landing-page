@@ -13,11 +13,10 @@
   const animateDivs = document.querySelectorAll(".animate");
   const callback = (entries, observer) => {
     entries.forEach((entry) => {
-      if (
-        entry.isIntersecting &&
-        !entry.target.classList.contains("animated")
-      ) {
+      if (entry.isIntersecting) {
         entry.target.classList.add("animated");
+      } else {
+        entry.target.classList.remove("animated");
       }
     });
   };
@@ -32,14 +31,20 @@
 
 // FEATURE SELECTOR
 const featureSelectors = document.querySelectorAll(".select-feature");
-const resetSelectors = () => {
-  featureSelectors.forEach((selector) => {
-    selector.dataset.checked = false;
-  });
+const featureDis = document.querySelectorAll(".feature-dis");
+
+const resetDataAttr = () => {
+  for (let i = 0; i < 3; i++) {
+    featureSelectors[i].dataset.checked = false;
+    featureDis[i].dataset.active = false;
+  }
 };
+
 featureSelectors.forEach((selector) => {
   selector.addEventListener("click", () => {
-    resetSelectors();
-    selector.dataset.checked = true;
+    resetDataAttr();
+    const index = Number(selector.dataset.id) - 1;
+    featureSelectors[index].dataset.checked = true;
+    featureDis[index].dataset.active = true;
   });
 });
