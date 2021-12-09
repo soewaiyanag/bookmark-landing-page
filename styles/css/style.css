@@ -16,8 +16,8 @@
   padding: 1rem;
   border-radius: 5px;
   outline-offset: -2px;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 0.8rem;
+  font-weight: 500;
   transition: color 300ms ease, outline 100ms ease, background-color 300ms ease;
 }
 
@@ -29,6 +29,33 @@
   background-color: transparent;
   outline: 2px solid #5368df;
   color: #5368df;
+}
+
+.animate::after {
+  opacity: 0;
+  transform: translateX(100px) !important;
+  transition: transform 1s, opacity 1s;
+  transition-delay: 500ms;
+}
+.animate .fadeRight {
+  opacity: 0;
+  transform: translateX(100px) !important;
+  transition: transform 1s, opacity 1s;
+}
+
+.animate.animated::after {
+  opacity: 1 !important;
+  transform: translateX(0px) !important;
+}
+
+.animate.animated .fadeRight {
+  opacity: 1 !important;
+  transform: translateX(0px) !important;
+}
+
+.fadeIn {
+  opacity: 1 !important;
+  transform: translateX(0px) !important;
 }
 
 .bookmark-logo {
@@ -52,7 +79,7 @@
   fill: var(--icon-in-circle);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 879px) {
   nav.is-active .bookmark-logo {
     --circle: #fff;
     --text: #fff;
@@ -125,12 +152,12 @@ nav.is-active .hamburger .bar:nth-child(3) {
   outline: 2px solid #fa5757;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 879px) {
   nav .hamburger {
     display: none;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 879px) {
   .nav-link-container {
     gap: 0;
     transition: transform 300ms ease-in-out;
@@ -182,15 +209,14 @@ nav.is-active .hamburger .bar:nth-child(3) {
 }
 .intro .hero-img-container {
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
 }
-.intro .hero-img-container::before {
+.intro .hero-img-container::after {
   content: "";
   animation-delay: 1000ms;
   position: absolute;
   top: 20%;
-  bottom: -10%;
+  bottom: 0%;
   left: 27%;
   width: 2000px;
   border-bottom-left-radius: 300px;
@@ -200,8 +226,8 @@ nav.is-active .hamburger .bar:nth-child(3) {
 }
 .intro .hero-img-container .hero-img {
   width: 100%;
-  max-width: 400px;
-  transform: scale(1.175);
+  margin-left: auto;
+  margin-right: auto;
 }
 .intro aside {
   margin-top: 6rem;
@@ -233,7 +259,7 @@ nav.is-active .hamburger .bar:nth-child(3) {
   outline: #252b46 2px solid;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 879px) {
   .intro {
     display: flex;
     gap: 2rem;
@@ -247,7 +273,6 @@ nav.is-active .hamburger .bar:nth-child(3) {
   }
   .intro .hero-img-container .hero-img {
     max-width: 500px;
-    transform: translate(8%, 10%);
   }
   .intro aside {
     margin-top: 0;
@@ -280,7 +305,7 @@ a {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
 }
-@media (min-width: 768px) {
+@media (min-width: 879px) {
   :root {
     font-size: 18px;
   }

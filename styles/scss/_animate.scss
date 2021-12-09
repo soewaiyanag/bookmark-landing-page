@@ -1,0 +1,21 @@
+.animate {
+  &::after {
+    @include fadeRight;
+    transition-delay: 500ms;
+  }
+  .fadeRight {
+    @include fadeRight;
+  }
+}
+
+.animate.animated::after {
+  @include fadeRightReturnOrigin;
+}
+
+.animate.animated .fadeRight {
+  @include fadeRightReturnOrigin;
+}
+
+.fadeIn {
+  @include fadeRightReturnOrigin;
+}

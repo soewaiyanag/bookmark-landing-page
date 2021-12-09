@@ -5,15 +5,14 @@
 
   .hero-img-container {
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
 
-    &::before {
+    &::after {
       content: "";
       animation-delay: 1000ms;
       position: absolute;
       top: 20%;
-      bottom: -10%;
+      bottom: 0%;
       left: 27%;
       width: 2000px;
       border-bottom-left-radius: 300px;
@@ -24,8 +23,10 @@
 
     .hero-img {
       width: 100%;
-      max-width: 400px;
-      transform: scale(1.175);
+      // max-width: 400px;
+
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -67,7 +68,7 @@
   }
 }
 
-@include media-breakpoing-up($lg) {
+@include media-breakpoing-up($md) {
   .intro {
     display: flex;
     gap: 2rem;
@@ -84,7 +85,6 @@
 
       .hero-img {
         max-width: 500px;
-        transform: translate(8%, 10%);
       }
     }
 

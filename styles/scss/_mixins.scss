@@ -1,6 +1,6 @@
 $xs: 0;
 $sm: 576px;
-$md: 768px;
+$md: 879px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
@@ -14,4 +14,15 @@ $xxl: 1400px;
   @media (max-width: $bp) {
     @content;
   }
+}
+
+@mixin fadeRight {
+  opacity: 0;
+  transform: translateX(100px) !important;
+  transition: transform 1s, opacity 1s;
+}
+
+@mixin fadeRightReturnOrigin {
+  opacity: 1 !important;
+  transform: translateX(0px) !important;
 }
