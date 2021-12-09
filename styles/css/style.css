@@ -13,7 +13,7 @@
 }
 
 .btn {
-  padding: 1rem;
+  padding: 1em;
   border-radius: 5px;
   outline-offset: -2px;
   font-size: 0.8rem;
@@ -225,7 +225,7 @@ nav.is-active .hamburger .bar:nth-child(3) {
   z-index: -1;
 }
 .intro .hero-img-container .hero-img {
-  width: 100%;
+  width: min(100%, 400px);
   margin-left: auto;
   margin-right: auto;
 }
@@ -284,6 +284,65 @@ nav.is-active .hamburger .bar:nth-child(3) {
     justify-content: left;
   }
 }
+.features {
+  margin-top: 8rem;
+}
+.features .text-box {
+  text-align: center;
+}
+.features .text-box > * {
+  margin: 1rem 0;
+}
+.features .text-box h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #252b46;
+}
+.features .text-box p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #9194a1;
+}
+
+.feature-viewer {
+  text-align: center;
+}
+.feature-viewer .selector .select-feature {
+  position: relative;
+  color: #9194a1;
+  transition: color 200ms ease;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 0;
+}
+.feature-viewer .selector .select-feature:first-child {
+  border-top: 0.5px solid #9194a1;
+  border-bottom: 0.5px solid #9194a1;
+}
+.feature-viewer .selector .select-feature:not(:first-child) {
+  border-bottom: 0.5px solid #9194a1;
+}
+.feature-viewer .selector .select-feature::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  transform: translateX(-50%);
+  transition: width 500ms ease;
+  border-radius: 5px;
+  background-color: #fa5757;
+}
+.feature-viewer .selector [data-checked=true] {
+  color: black;
+}
+.feature-viewer .selector [data-checked=true]::after {
+  width: 50%;
+}
+
 li {
   list-style: none;
 }

@@ -22,8 +22,7 @@
     }
 
     .hero-img {
-      width: 100%;
-      // max-width: 400px;
+      width: Min(100%, 400px);
 
       margin-left: auto;
       margin-right: auto;
