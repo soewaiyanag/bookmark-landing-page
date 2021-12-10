@@ -7,14 +7,14 @@
   padding-right: 15px;
   max-width: 90%;
   @include media-breakpoing-up($lg) {
-    max-width: 980px;
+    max-width: 1080px;
   }
 }
 .btn {
-  padding: 1em;
+  padding: 0.8em 1em;
   border-radius: 5px;
   outline-offset: -2px;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 500;
   transition: color 300ms ease, outline 100ms ease, background-color 300ms ease;
 }

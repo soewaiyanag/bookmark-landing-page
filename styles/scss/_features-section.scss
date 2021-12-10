@@ -33,7 +33,7 @@
     .select-feature {
       position: relative;
       color: hsl(229, 8%, 60%);
-      transition: color 200ms ease;
+      transition: color 300ms ease;
       font-weight: 500;
       cursor: pointer;
       // to take the whole width of parent div
@@ -48,6 +48,10 @@
 
       &:not(:first-child) {
         border-bottom: 0.5px solid hsl(229, 8%, 60%);
+      }
+
+      &:hover {
+        color: hsl(0, 94%, 66%);
       }
 
       &::after {
@@ -76,12 +80,12 @@
 
 .feature-dis[data-active="true"] {
   display: flex !important;
+  justify-content: space-between;
 }
 
 .feature-dis {
   display: none !important;
-  // display: flex;
-  flex-direction: column;
+
   margin-top: 2.5rem;
   .illustration-container {
     .illustration {

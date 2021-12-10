@@ -5,7 +5,9 @@
 @import "./nav";
 @import "./intro-section";
 @import "./features-section";
+@import "./download-section";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
 li {
   list-style: none;
 }
@@ -26,7 +28,7 @@ a {
 :root {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
-  @include media-breakpoing-up {
+  @include media-breakpoing-up($md) {
     font-size: 18px;
   }
 }
