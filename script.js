@@ -29,7 +29,9 @@ window.addEventListener("scroll", () => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("animated");
-        observer.unobserve(entry.target);
+        // observer.unobserve(entry.target);
+      } else {
+        entry.target.classList.remove("animated");
       }
     });
   };
@@ -65,3 +67,23 @@ window.addEventListener("scroll", () => {
 })();
 
 // ACCORDION
+
+const accordionItems = document.querySelectorAll(".accordion__item");
+const labels = document.querySelectorAll(".label");
+const answers = document.querySelectorAll(".answer");
+
+for (let i = 0; i < accordionItems.length; i++) {
+  const accordionItem = accordionItems[i];
+  const label = labels[i];
+  const answer = answers[i];
+
+  label.addEventListener("click", () => {
+    accordionItem.classList.toggle("active");
+
+    if (accordionItem.classList.contains("active")) {
+      answer.style.height = answer.scrollHeight + "px";
+    } else {
+      answer.style.height = 0 + "px";
+    }
+  });
+}

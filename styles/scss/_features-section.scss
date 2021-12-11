@@ -68,6 +68,7 @@
   .illustration-container {
     .illustration {
       width: Min(90%, 380px);
+      // margin-top: 2rem; //to center vertically
     }
     &::after {
       content: "";
@@ -108,6 +109,8 @@
     gap: 2rem;
     & > * {
       width: 50%;
+      margin-top: auto;
+      margin-bottom: auto;
     }
     .text-box {
       align-self: center;
