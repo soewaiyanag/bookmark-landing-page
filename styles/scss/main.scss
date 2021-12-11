@@ -38,8 +38,15 @@ body {
   overflow-x: hidden;
 }
 
+@include media-breakpoing-down($md) {
+  body.nav-active {
+    overflow-y: hidden;
+  }
+}
+
 .illustration-container {
   position: relative;
+  z-index: -1;
 
   .illustration {
     width: Min(100%, 400px);

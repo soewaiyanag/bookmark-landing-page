@@ -1,12 +1,26 @@
 // MOBILE NAV TOGGLE
+const nav = document.querySelector("nav");
 (function () {
   const hamburger = document.querySelector(".hamburger");
-  const nav = document.querySelector("nav");
+  const disableScroll = () => {
+    if (nav.classList.contains("is-active")) {
+      document.body.classList.add("nav-active");
+    } else {
+      document.body.classList.remove("nav-active");
+    }
+  };
 
   hamburger.addEventListener("click", () => {
     nav.classList.toggle("is-active");
+    disableScroll();
   });
 })();
+
+// NAV BAR STYLE
+
+window.addEventListener("scroll", () => {
+  nav.classList.toggle("shadow", window.scrollY > 0);
+});
 
 // SCROLL ANIMATION
 (function () {
@@ -23,6 +37,7 @@
   const myObserver = new IntersectionObserver(callback, {
     threshold: 0.5,
   });
+
   animateDivs.forEach((animateDiv) => {
     myObserver.observe(animateDiv);
   });

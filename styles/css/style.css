@@ -89,13 +89,25 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2.5rem;
+  padding: 2.5rem 0;
   gap: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 9;
+  background-color: #fff;
+  transition: box-shadow 400ms ease-out;
 }
 nav .bookmark-logo,
 nav .hamburger {
   position: relative;
   z-index: 9;
+}
+
+nav.shadow {
+  box-shadow: -4px -3px 20px 1px rgba(0, 0, 0, 0.35);
 }
 
 nav.is-active .hamburger .bar {
@@ -162,8 +174,11 @@ nav.is-active .hamburger .bar:nth-child(3) {
     transition: transform 300ms ease-in-out;
     transform: translateX(100%);
     position: absolute;
-    inset: 0;
-    background-color: rgba(37, 43, 70, 0.9);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(37, 43, 70, 0.99);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -202,9 +217,8 @@ nav.is-active .hamburger .bar:nth-child(3) {
   }
 }
 .intro {
-  margin-top: 5rem;
+  margin-top: 8rem;
   text-align: center;
-  position: relative;
 }
 .intro .illustration-container::after {
   content: "";
@@ -283,6 +297,7 @@ nav.is-active .hamburger .bar:nth-child(3) {
   display: inline-block;
   width: 100%;
   padding: 1rem 0;
+  z-index: 0;
 }
 .feature-viewer .selector .select-feature:first-child {
   border-top: 0.5px solid #9194a1;
@@ -457,8 +472,14 @@ body {
   overflow-x: hidden;
 }
 
+@media (max-width: 904px) {
+  body.nav-active {
+    overflow-y: hidden;
+  }
+}
 .illustration-container {
   position: relative;
+  z-index: -1;
 }
 .illustration-container .illustration {
   width: min(100%, 400px);
