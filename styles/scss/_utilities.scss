@@ -1,20 +1,22 @@
 @use "./mixins" as *;
 
 .container {
+  $pd: 10%;
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  max-width: 90%;
+  padding-left: $pd;
+  padding-right: $pd;
+  max-width: 100%;
   @include media-breakpoing-up($lg) {
-    max-width: 1080px;
+    max-width: 1200px;
   }
 }
+
 .btn {
   padding: 0.8em 1em;
   border-radius: 5px;
   outline-offset: -2px;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 500;
   transition: color 300ms ease, outline 100ms ease, background-color 300ms ease;
 }

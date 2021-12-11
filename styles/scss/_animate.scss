@@ -1,3 +1,20 @@
+@mixin fadeRight {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: transform 1s, opacity 1s;
+}
+
+@mixin fadeLeft {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: transform 1s, opacity 1s;
+}
+
+@mixin originTranslateX {
+  opacity: 1 !important;
+  transform: translateX(0px) !important;
+}
+
 .animate {
   .fadeRight {
     @include fadeRight;
@@ -8,17 +25,13 @@
 }
 
 .animate.animated::after {
-  @include returnOrigin;
+  @include originTranslateX;
 }
 
 .animate.animated .fadeRight {
-  @include returnOrigin;
+  @include originTranslateX;
 }
 
 .animate.animated .fadeLeft {
-  @include returnOrigin;
-}
-
-.fadeIn {
-  @include returnOrigin;
+  @include originTranslateX;
 }

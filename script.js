@@ -29,21 +29,24 @@
 })();
 
 // FEATURE SELECTOR
-const featureSelectors = document.querySelectorAll(".select-feature");
-const featureDis = document.querySelectorAll(".feature-dis");
+(function () {
+  const featureSelectors = document.querySelectorAll(".select-feature");
+  const featureDis = document.querySelectorAll(".feature-dis");
 
-const resetDataAttr = () => {
-  for (let i = 0; i < 3; i++) {
-    featureSelectors[i].dataset.checked = false;
-    featureDis[i].dataset.active = false;
-  }
-};
+  const resetDataAttr = () => {
+    for (let i = 0; i < 3; i++) {
+      featureSelectors[i].dataset.checked = false;
+      featureDis[i].dataset.active = false;
+    }
+  };
 
-featureSelectors.forEach((selector) => {
-  selector.addEventListener("click", () => {
-    resetDataAttr();
-    const index = Number(selector.dataset.id) - 1;
-    featureSelectors[index].dataset.checked = true;
-    featureDis[index].dataset.active = true;
+  featureSelectors.forEach((selector, index) => {
+    selector.addEventListener("click", () => {
+      resetDataAttr();
+      featureSelectors[index].dataset.checked = true;
+      featureDis[index].dataset.active = true;
+    });
   });
-});
+})();
+
+// ACCORDION

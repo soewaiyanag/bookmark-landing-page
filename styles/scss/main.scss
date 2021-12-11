@@ -6,6 +6,7 @@
 @import "./intro-section";
 @import "./features-section";
 @import "./download-section";
+@import "./q&a";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
 li {
@@ -35,4 +36,40 @@ a {
 
 body {
   overflow-x: hidden;
+}
+
+.illustration-container {
+  position: relative;
+
+  .illustration {
+    width: Min(100%, 400px);
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.text-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+
+  .btn {
+    width: fit-content;
+    display: none;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: hsl(229, 31%, 21%);
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: hsl(229, 8%, 60%);
+  }
 }

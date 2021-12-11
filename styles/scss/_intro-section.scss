@@ -1,15 +1,3 @@
-.illustration-container {
-  position: relative;
-  display: flex;
-
-  .illustration {
-    width: Min(100%, 400px);
-
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 .intro {
   margin-top: 5rem;
   text-align: center;
@@ -35,23 +23,6 @@
 
   aside {
     margin-top: 6rem;
-    .text-box {
-      & > * {
-        margin: 1rem 0;
-      }
-
-      h1 {
-        font-size: 2rem;
-        font-weight: 500;
-        color: hsl(229, 31%, 21%);
-      }
-
-      p {
-        font-size: 1rem;
-        font-weight: 400;
-        color: hsl(229, 8%, 60%);
-      }
-    }
 
     .btns {
       display: flex;
@@ -96,7 +67,9 @@
 
       align-self: center;
       order: -1;
-      text-align: left;
+      .text-box {
+        text-align: left;
+      }
       .btns {
         justify-content: left;
       }
