@@ -15,6 +15,9 @@ footer {
     a {
       color: #fff;
       transition: 200ms ease color;
+      font-size: 1rem;
+      font-weight: 400 !important;
+
       &:hover {
         color: hsl(0, 94%, 66%);
       }

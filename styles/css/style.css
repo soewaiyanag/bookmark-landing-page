@@ -576,6 +576,8 @@ footer .footer-nav {
 footer .footer-nav a {
   color: #fff;
   transition: 200ms ease color;
+  font-size: 1rem;
+  font-weight: 400 !important;
 }
 footer .footer-nav a:hover {
   color: #fa5757;
