@@ -87,3 +87,13 @@ for (let i = 0; i < accordionItems.length; i++) {
     }
   });
 }
+
+// EMAIL VALADATION
+
+const form = document.querySelector("form");
+const emailInput = form.querySelector(".email");
+const submit = form.querySelector(".btn");
+
+submit.addEventListener("click", (e) => {
+  e.preventDefault();
+});

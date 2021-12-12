@@ -448,8 +448,8 @@ nav.is-active .hamburger .bar:nth-child(3) {
 }
 
 .qna {
-  margin-top: 8rem;
-  max-width: 890px !important;
+  margin: 8rem 0;
+  max-width: 890px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -477,7 +477,7 @@ nav.is-active .hamburger .bar:nth-child(3) {
   color: #fa5757;
 }
 .accordion .label h1 {
-  font-size: 1.2rem;
+  font-size: 1.075rem;
   font-weight: 400;
   color: #252b46;
   transition: color 200ms ease-out;
@@ -489,7 +489,7 @@ nav.is-active .hamburger .bar:nth-child(3) {
 .accordion .answer {
   height: 0;
   overflow-y: hidden;
-  transition: height 200ms ease-out;
+  transition: height 200ms linear;
 }
 .accordion .answer__text {
   padding: 1rem 0 2rem;
@@ -503,6 +503,63 @@ nav.is-active .hamburger .bar:nth-child(3) {
   transform: rotate(180deg);
 }
 
+.contact {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: #5368df;
+  color: #fff;
+}
+.contact > div {
+  max-width: 890px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact h3 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+.contact h1 {
+  font-size: 1.35rem;
+  font-weight: 5 0;
+  margin: 2rem 0;
+}
+.contact form {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.contact form > * {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0.95rem 1rem;
+}
+.contact #email {
+  flex: 8;
+  font-weight: 500;
+}
+.contact .submit-email {
+  cursor: pointer;
+  font-weight: 500;
+  color: white;
+  background-color: #fa5757;
+}
+.contact .submit-email:hover {
+  background-color: transparent;
+  outline: 2px solid #fa5757;
+  color: #fa5757;
+}
+
+@media (max-width: 576px) {
+  .contact form {
+    flex-direction: column;
+  }
+  .contact form > * {
+    width: 100% !important;
+  }
+}
 li {
   list-style: none;
 }
