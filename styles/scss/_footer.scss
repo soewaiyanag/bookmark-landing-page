@@ -1,0 +1,53 @@
+footer {
+  background-color: hsl(229, 31%, 21%);
+  text-align: center;
+  padding: 2rem 0;
+
+  .bookmark-logo {
+    .text {
+      fill: #fff;
+    }
+  }
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    a {
+      color: #fff;
+      transition: 200ms ease color;
+      &:hover {
+        color: hsl(0, 94%, 66%);
+      }
+    }
+  }
+  .footer-social {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .social-icon {
+    fill: #fff;
+    transition: 200ms ease fill;
+    &:hover {
+      fill: hsl(0, 94%, 66%);
+    }
+  }
+}
+
+@include media-breakpoing-up {
+  footer {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .footer-nav {
+      flex-direction: row;
+      align-items: center;
+    }
+    .footer-social {
+      margin-top: 0;
+    }
+  }
+}

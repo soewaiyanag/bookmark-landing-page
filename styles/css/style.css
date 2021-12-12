@@ -560,6 +560,54 @@ nav.is-active .hamburger .bar:nth-child(3) {
     width: 100% !important;
   }
 }
+footer {
+  background-color: #252b46;
+  text-align: center;
+  padding: 2rem 0;
+}
+footer .bookmark-logo .text {
+  fill: #fff;
+}
+footer .footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+footer .footer-nav a {
+  color: #fff;
+  transition: 200ms ease color;
+}
+footer .footer-nav a:hover {
+  color: #fa5757;
+}
+footer .footer-social {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+footer .social-icon {
+  fill: #fff;
+  transition: 200ms ease fill;
+}
+footer .social-icon:hover {
+  fill: #fa5757;
+}
+
+@media (min-width: 904px) {
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  footer .footer-nav {
+    flex-direction: row;
+    align-items: center;
+  }
+  footer .footer-social {
+    margin-top: 0;
+  }
+}
 li {
   list-style: none;
 }
