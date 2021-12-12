@@ -11,6 +11,11 @@
 @import "./footer";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
+.wrapper-to-prevent-overflowing-in-mobile-browsers {
+  position: relative;
+  overflow-x: hidden !important;
+}
+
 li {
   list-style: none;
 }
@@ -34,10 +39,6 @@ a {
   @include media-breakpoing-up($md) {
     font-size: 18px;
   }
-}
-
-body {
-  overflow-x: hidden;
 }
 
 @include media-breakpoing-down($md) {

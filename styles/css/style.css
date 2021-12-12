@@ -608,6 +608,11 @@ footer .social-icon:hover {
     margin-top: 0;
   }
 }
+.wrapper-to-prevent-overflowing-in-mobile-browsers {
+  position: relative;
+  overflow-x: hidden !important;
+}
+
 li {
   list-style: none;
 }
@@ -633,10 +638,6 @@ a {
   :root {
     font-size: 18px;
   }
-}
-
-body {
-  overflow-x: hidden;
 }
 
 @media (max-width: 904px) {
